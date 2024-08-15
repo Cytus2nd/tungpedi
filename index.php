@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,32 +53,27 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#best-seller">Best Seller</a>
+              <a class="nav-link" href="#product">Product</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact Us</a>
+              <a class="nav-link" href="#contact">Our Contacts</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="ms-auto px-2">
-        <a class="px-1" href=""><i class="iconnav" data-feather="search" id="search-button"></i></a>
-        <a class="px-1" href=""><i class="iconnav" data-feather="shopping-cart" id="shopping-cart-button"></i></a>
-        <a class="px-1" href="./login.html"><i class="iconnav" data-feather="user"></i></a>
+        <a class="px-1" href="keranjang.php"><i class="iconnav" data-feather="shopping-cart" id="shopping-cart-button"></i></a>
+        <a class="px-1" href="<?php echo isset($_SESSION['username']) ? 'profile.php' : 'login.php'; ?>">
+          <i class="iconnav" data-feather="user"></i>
+        </a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-
-    <!-- search form -->
-    <div class="kotak-search">
-      <input type="search" id="search-box" placeholder="Search here..." />
-    </div>
-    <!-- search form -->
   </nav>
   <!-- navbar end -->
 
@@ -91,116 +90,12 @@
   </div>
   <!-- banner end -->
 
-  <!-- Best Seller -->
-  <section id="best-seller" class="pt-5 pb-5">
+  <!-- product -->
+  <section id="product" class="pt-5 pb-5">
     <div class="container">
       <div class="title text-center">
         <h2 class="position-relative d-inline-block pt-5">
-          <span class="star-color"><i class="bi bi-star-fill"></i></span> Our Best Seller <span class="star-color"><i class="bi bi-star-fill"></i></span>
-        </h2>
-      </div>
-      <div id="product-cards">
-        <div class="row pt-3">
-          <div class="col-md-3 pt-3 pt-md-0">
-            <div class="card">
-              <img src="./assets/img/body-lotion.png" alt="" />
-              <div class="card-body">
-                <h3 class="text-center">Body Lotion</h3>
-                <div class="text-center">
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                </div>
-                <div class="harga pt-1">
-                  <p class="text-center fs-4">IDR 85K</p>
-                </div>
-                <div class="product-icons text-center">
-                  <a href="" class="pe-2 item-detail-button"><i data-feather="eye"></i></a>
-                  <span class="icon-color"><i data-feather="shopping-cart"></i></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 pt-3 pt-md-0">
-            <div class="card" data-name="p-2">
-              <img src="./assets/img/lipstik.png" alt="" />
-              <div class="card-body">
-                <h3 class="text-center">Red Lipstick</h3>
-                <div class="text-center">
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                </div>
-                <div class="harga pt-1">
-                  <p class="text-center fs-4">IDR 55K</p>
-                </div>
-                <div class="product-icons text-center">
-                  <a href="" class="pe-2 item-detail-button-2"><i data-feather="eye"></i></a>
-                  <span class="icon-color"><i data-feather="shopping-cart"></i></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 pt-3 pt-md-0">
-            <div class="card">
-              <img src="./assets/img/eyeliner.png" alt="" />
-              <div class="card-body">
-                <h3 class="text-center">Pink Eye Liner</h3>
-                <div class="text-center">
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                </div>
-                <div class="harga pt-1">
-                  <p class="text-center fs-4">IDR 99K</p>
-                </div>
-                <div class="product-icons text-center">
-                  <a href="" class="pe-2 item-detail-button-3"><i data-feather="eye"></i></a>
-                  <span class="icon-color"><i data-feather="shopping-cart"></i></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 pt-3 pt-md-0">
-            <div class="card">
-              <img src="./assets/img/powder.png" alt="" />
-              <div class="card-body">
-                <h3 class="text-center">Face Powder</h3>
-                <div class="text-center">
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                  <span class="star-color"><i class="bi bi-star-fill"></i></span>
-                </div>
-                <div class="harga pt-1">
-                  <p class="text-center fs-4">IDR 50K</p>
-                </div>
-                <div class="product-icons text-center">
-                  <a href="" class="pe-2 item-detail-button-4"><i data-feather="eye"></i></a>
-                  <span class="icon-color"><i data-feather="shopping-cart"></i></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Best Seller end-->
-
-  <!-- Best Seller -->
-  <section id="best-seller" class="pt-5 pb-5">
-    <div class="container">
-      <div class="title text-center">
-        <h2 class="position-relative d-inline-block pt-5">
-          <span class="star-color"><i class="bi bi-star-fill"></i></span> Our Best Seller <span class="star-color"><i class="bi bi-star-fill"></i></span>
+          <span class="star-color"><i class="bi bi-star-fill"></i></span> Our Best Products <span class="star-color"><i class="bi bi-star-fill"></i></span>
         </h2>
       </div>
       <div class="row">
@@ -221,22 +116,22 @@
           // Output data setiap baris
           while ($row = $result->fetch_assoc()) {
             echo '
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <a href="detail_produk.php?id=' . $row["id_produk"] . '">
-                                <img src="images/' . $row["foto_produk"] . '" class="card-img-top img-fluid" alt="' . $row["nama_produk"] . '">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a href="detail_produk.php?id=' . $row["id_produk"] . '">' . $row["nama_produk"] . '</a>
-                                </h5>
-                                <p class="card-text">Rp ' . number_format($row["harga"], 0, ',', '.') . '</p>
-                            </div>
-                        </div>
-                    </div>';
+                      <div class="col-md-3 pt-3">
+                          <div class="card mb-4">
+                              <a href="detail_produk.php?id=' . $row["id_produk"] . '">
+                                  <img src="images/' . $row["foto_produk"] . '" class="card-img-top img-fluid" alt="' . $row["nama_produk"] . '">
+                              </a>
+                              <div class="card-body">
+                                  <h5 class="card-title">
+                                      <a href="detail_produk.php?id=' . $row["id_produk"] . '" style="text-decoration: none; color: black;">' . $row["nama_produk"] . '</a>
+                                  </h5>
+                                  <p class="card-text">Rp ' . number_format($row["harga"], 0, ',', '.') . '</p>
+                              </div>
+                          </div>
+                      </div>';
           }
         } else {
-          echo "0 results";
+          echo "No Products Found";
         }
         $conn->close();
         ?>
@@ -246,11 +141,11 @@
   <!-- Best Seller end-->
 
   <!-- Contact Us -->
-  <section class="pt-5 pb-3 c-us" id="contact">
+  <section class="pt-5 pb-5 c-us" id="contact">
     <div class="container">
       <div class="row px-3">
-        <h3 class="text-center pb-3 pt-5">Contact Us</h3>
-        <div class="col-md-6 pt-5">
+        <h3 class="text-center pb-3 pt-5">Our Contacts</h3>
+        <div class="col-md-12 pt-5">
           <div class="row mb-3">
             <div class="col-6">
               <div class="border rounded p-3 text-center bg-cs shadow">
@@ -274,23 +169,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 pb-5 pt-3">
-          <form>
-            <div class="mb-3">
-              <label for="inputNama" class="form-label fw-bold">Name</label>
-              <input type="text" class="form-control" id="inputNama" placeholder="Name" />
-            </div>
-            <div class="mb-3">
-              <label for="inputNoHP" class="form-label fw-bold">Phone Number</label>
-              <input type="text" class="form-control" id="inputNoHP" placeholder="Phone Number" />
-            </div>
-            <div class="mb-3">
-              <label for="inputPesan" class="form-label fw-bold">Message</label>
-              <textarea class="form-control" id="inputPesan" rows="5" placeholder="Message"></textarea>
-            </div>
-            <button type="submit" class="btn btn-success">Submit</button>
-          </form>
         </div>
       </div>
     </div>
@@ -324,8 +202,7 @@
             <p>We Accept Following Payment</p>
             <img src="./assets/img/bca-logo.png" class="pt-2" alt="" />
             <img src="./assets/img/bni-logo.png" class="pt-2" alt="" />
-            <img src="./assets/img/mastercard-logo.png" class="pt-2" alt="" />
-            <img src="./assets/img/visa logo.png" class="pt-2" alt="" />
+            <img src="./assets/img/gopay.png" class="pt-2" alt="" />
           </div>
         </div>
         <div class="col-md-3 mx-auto pt-3">
